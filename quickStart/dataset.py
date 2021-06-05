@@ -4,7 +4,7 @@ from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor, Lambda, Compose
 import matplotlib.pyplot as plt
-print("asd")
+
 # Download training data from open datasets.
 training_data = datasets.FashionMNIST(
     root="data",
