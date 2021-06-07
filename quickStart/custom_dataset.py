@@ -43,7 +43,7 @@ class CustomImageDataset(object):
         labels = torch.ones((num_objs,), dtype=torch.int64)
         iscrowd = torch.zeros((num_objs,), dtype=torch.int64)
 
-        target = {}
+        target = {} 
         target["boxes"] = boxes
         target["labels"] = labels
         target["image_id"] = image_id
