@@ -1,6 +1,6 @@
 # Pyotrch Tutorials
 
-new repo for ew beginnings
+new repo for new beginnings
 
 -----
 
