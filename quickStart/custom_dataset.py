@@ -1,6 +1,8 @@
 import os
 from PIL import Image
 from xml.etree import ElementTree
+import numpy as np
+import torch
 
 def extract_boxes(filename):
 	# load and parse the file
@@ -31,11 +33,11 @@ class CustomImageDataset(object):
 
     def __getitem__(self, idx):
         img_path = os.path.join(self.img_dir, self.images[idx])
-        image = np.array(Image.open(img_path))
+        image = np.array(Image.open(img_path).convert('RGB'))
 
-        num_obj = 1
+        num_objs = 1
         
-        boxes = extract_boxes(self.img_labels[idx])
+        boxes = extract_boxes(os.path.join(self.annotations_dir,self.img_labels[idx]))
 
         boxes = torch.as_tensor(boxes, dtype=torch.float32)
         image_id = torch.tensor([idx])
